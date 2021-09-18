@@ -6,30 +6,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
     <title>Refresh Spa Company</title>
 </head>
 <body>
-    <header>
-        <div>
-           <h1>Refresh Spa Co.</h1> 
+    <nav class="navbar navbar-expand-sm sticky-top">
+        <div class="container">
+            <h2><a class="navbar-brand" href="#">Refresh Spa Co.</a></h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#refreshNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="refreshNavbar">
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item active"><a class="nav-link" href="#"><i></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="subscribe.html"><i></i> Subscribe</a></li>
+                </ul>
+                <span class="navbar-text ml-auto">
+                    <a role="button" id="loginButton" class="btn">
+                        <i></i> Login
+                    </a>
+                </span>
+            </div>
         </div>
-    </header>
-    <div>
-
+    </nav>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-
+    <div id="homePic">
+        <div class="row align-items-center">
+            <div class="col-md-8 mt-3 mx-auto">
+                <div class="card">
+                    <img class="card-img" src="img/underwear.jpg" class="img-fluid" alt="Man reading in white boxer briefs ">
+                    <div class="overlay align-bottom">
+                        <h2 class="text-center align-items-baseline">Refreshment For All</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-
+    <div class="container mt-3">
+        <div class="card mx-auto" style="width: 18rem;">
+            <div class="card-body text-center">
+            <h5 class="card-title">Re-Up</h5>
+            <p class="card-text">Instead of going to the store to replace your undergarments, subscribe to get them shipped to at the rate you need, in the bag of your choice</p>
+            <a href="#" class="btn" id="subButton">Subscribe</a>
+            </div>
+            <img src="img/supply-WeFNGhH8iX4-unsplash (1).jpg" class="card-img-bottom" alt="photo of toiletries">
+        </div>
     </div>
-    <footer>
+    <div id="subModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">Stay Refreshed</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row form-group">
+                                <label class="col-sm-6 col-form-label">Subcription Type</label>
+                                <div class="col">
+                                    <select class="form-control" name="subType" id="subType">
+                                        <option selected>Select...</option>
+                                        <option>Dopp Kit</option>
+                                        <option>Small Duffel Bag</option>
+                                        <option>Backpack</option>
+                                        <option>Large Duffel Bag</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="date" class="col-sm-6 col-form-label">Size</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Small</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Medium</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Large</label>
+                                  </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-6 col-form-label">Gender</label>
+                                <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                        <input type="radio" name="gender" id="male" autocomplete="off" checked> Male
+                                      </label>
+                                      <label class="btn btn-primary">
+                                        <input type="radio" name="gender" id="female" autocomplete="off"> Female
+                                      </label>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-6 col-form-label">Items</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Toiletries</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">Undergarments</label>
+                                  </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col">
+                                    <button class="btn btn-secondary" type="submit" data-dismiss="modal">Cancel</button>
+                                    <a href="subscribe.html" class="btn btn-primary" type="submit">Subscribe</a> 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer mt-3">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 col-sm-2 offset-1">
+                    <h5>Links</h5>
+            		<ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Sites</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 mx-auto">
+                    <h5>Contact Us</h5>
+                    <a role="button" class="btn btn-link" href="tel:+15023867284"><i></i> 1-502-386-7284</a><br />
+                    <a role="button" class="btn btn-link" href="mailto:refreshspaco@gmail.com"><i></i>refreshspaco@gmail.com</a>
+                </div>                
+           </div>
+        </div>
 
     </footer>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="js/scripts.js"></script>
 
 </body>
 
